@@ -1,0 +1,157 @@
+/* Main Text Styles */
+.main-text-h1 {
+  font-size: 12rem;
+  line-height: 12rem;
+  font-weight: 700;
+  letter-spacing: -10px;
+  cursor: default;
+  user-select: none;
+}
+
+.main-subtitle {
+  color: var(--secondary-text-color);
+  font-size: 1.5rem;
+  line-height: 2rem;
+  cursor: default;
+  user-select: none;
+  text-transform: uppercase;
+}
+
+/* Animations */
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.animate-blink {
+  display: inline-block;
+  margin: 0 4px;
+  animation: blink 0.9s step-end infinite;
+  -webkit-animation: blink 0.9s step-end infinite;
+}
+
+/* Social Media Sidebar */
+.social-midia-sidebar {
+  position: fixed;
+  left: 0;
+  background-color: #FFF;
+  padding: 1rem;
+  border-radius: 0 8px 8px 0;
+  z-index: 9999;
+}
+
+.social-midia-sidebar img {
+  cursor: pointer;
+  transition: all 0.3s;
+  filter: brightness(0) invert(0);
+}
+
+.social-midia-sidebar img:hover {
+  filter: none;
+  transform: scale(1.1);
+}
+
+/* Scroll Indicator */
+.scroll-here {
+  position: absolute;
+  bottom: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.scroll-text {
+  color: var(--main);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  user-select: none;
+}
+
+.scroll-mouse {
+  width: 25px;
+  height: 40px;
+  border: 2px solid var(--secondary-text-color);
+  border-radius: 60px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.scroll-mouse:hover {
+  border-color: var(--main);
+  transform: scale(1.1);
+}
+
+.scroll-mouse:hover::before {
+  background-color: var(--main);
+}
+
+.scroll-mouse::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  top: 7px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--main);
+  border-radius: 50%;
+  opacity: 1;
+  animation: wheel 1.3s infinite;
+  -webkit-animation: wheel 1.3s infinite;
+  transition: all 0.3s;
+}
+
+/* Noise Effect */
+.noise {
+  position: fixed;
+  z-index: 9999;
+  top: -300%;
+  left: -150%;
+  height: 600%;
+  width: 600%;
+  -webkit-animation: grain 7s steps(10) infinite;
+  animation: grain 7s steps(10) infinite;
+  background-image: url('/noise.png');
+  background-size: 200px;
+  background-repeat: repeat;
+  opacity: .25;
+  pointer-events: none;
+}
+
+@keyframes grain {
+  0%, to {
+    transform: translate(0)
+  }
+  10% {
+    transform: translate(-5%, -10%)
+  }
+  20% {
+    transform: translate(-15%, 5%)
+  }
+  30% {
+    transform: translate(7%, -25%)
+  }
+  40% {
+    transform: translate(-5%, 25%)
+  }
+  50% {
+    transform: translate(-15%, 10%)
+  }
+  60% {
+    transform: translate(15%)
+  }
+  70% {
+    transform: translateY(15%)
+  }
+  80% {
+    transform: translate(3%, 35%)
+  }
+  90% {
+    transform: translate(-10%, 10%)
+  }
+}

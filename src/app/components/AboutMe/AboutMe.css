@@ -1,0 +1,21 @@
+.about-me {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background-color: var(--background);
+    min-height: 100vh;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.about-me h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about-me p {
+    font-size: 1rem;
+    line-height: 1.5;
+}

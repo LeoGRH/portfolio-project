@@ -1,21 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Root Variables */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #E5E4E3;
+  --foreground: #080808;
+  --secondary-text-color: #7f7f7f;
+  --main: #13cb00;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #FFF;
+    --secondary-text-color: #cfcfcf;
+    --main: #13cb00;
   }
 }
 
+body.dark-mode {
+  --background: #080808;
+  --foreground: #FFF;
+  --secondary-text-color: #cfcfcf;
+  --main: #13cb00;
+}
+
+/* Global Styles */
 body {
   color: var(--foreground);
+  font-size: 16px;
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: thin;
+  scrollbar-color: var(--foreground) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* Animations */
+@keyframes wheel {
+  to {
+      opacity: 0;
+      top: 27px;
+  }
+}
+
+@-webkit-keyframes wheel {
+  to {
+      opacity: 0;
+      top: 27px
+  }
+}
+
+/* Circle Styles */
+.circle {
+  position: fixed;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--foreground);
+  opacity: 0.15;
+  border: none;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 99999;
+  transition: width 0.3s, height 0.3s, background-color 0.3s, opacity 0.3s;
+}
+
+.circle-hover {
+  width: 6rem;
+  height: 6rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 640px) {
+  .main-text-h1 {
+    font-size: 3rem;
+    line-height: 6rem;
+    letter-spacing: 0px;
+  }
 }
